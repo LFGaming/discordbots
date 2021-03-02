@@ -94,6 +94,9 @@ async def on_message(message):
 
   if msg.startswith('$hello'):
        await message.channel.send('Hello!')
+
+  if message.content.startswith('$help'):
+       await message.channel.send(used.md)
      
 
 keep_alive()
