@@ -92,6 +92,10 @@ async def on_message(message):
       db["responding"] = False
       await message.channel.send("Responding is off.")
 
+  if msg.startswith('$hello'):
+       await message.channel.send('Hello!')
+     
+
 keep_alive()
 client.run(os.getenv("TOKEN"))
 # %%
