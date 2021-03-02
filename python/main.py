@@ -95,9 +95,11 @@ async def on_message(message):
   if msg.startswith('$hello'):
        await message.channel.send('Hello!')
 
+  if msg.startswith('$author'):
+       await message.channel.send('I am made by @LFGaming')
+       
   if message.content.startswith('$help'):
-       await message.channel.send(used.md)
-     
+       await message.channel.send("$hello : sents a Hello! back \n $help : sents a help message \n $inspire : sents a inpiering message \n $new : sents a encouragement to you \n $list : lists the messages \n $author : sents a credit message.")
 
 keep_alive()
 client.run(os.getenv("TOKEN"))
