@@ -101,6 +101,53 @@ async def on_message(message):
   if message.content.startswith('$help'):
        await message.channel.send(" $hello : sents a `Hello!` back \n $help : sents a help message \n $inspire : sents a inpiering message \n $new : sents a encouragement to you \n $list : lists the messages \n $author : sents a credit message.")
 
+# Roles
+client.on('messageReactionAdd', (reaction, user) => {
+
+	console.log('Hello!');
+	const { name } = reaction.emoji;
+	const member = reaction.message.guild.members.cache.get(user.id);
+	if (reaction.message.id === '768472712569946123') {
+		switch (name) {
+			case '🍎':
+				member.roles.add('768476367666675722');
+				break;
+			case '🍌':
+				member.roles.add('768476400737976350');
+				break;
+			case '🍇':
+				member.roles.add('768476429653901354');
+				break;
+			case '🍑':
+				member.roles.add('768476445101523015');
+				break;
+		}
+	}
+});
+
+client.on('messageReactionRemove', (reaction, user) => {
+
+	console.log('Hello!');
+	const { name } = reaction.emoji;
+	const member = reaction.message.guild.members.cache.get(user.id);
+	if (reaction.message.id === '768472712569946123') {
+		switch (name) {
+			case '🍎':
+				member.roles.remove('768476367666675722');
+				break;
+			case '🍌':
+				member.roles.remove('768476400737976350');
+				break;
+			case '🍇':
+				member.roles.remove('768476429653901354');
+				break;
+			case '🍑':
+				member.roles.remove('768476445101523015');
+				break;
+		}
+	}
+});
+
 keep_alive()
 client.run(os.getenv("TOKEN"))
 # %%
