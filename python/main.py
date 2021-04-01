@@ -102,7 +102,7 @@ async def on_message(message):
        await message.channel.send(" $hello : sents a `Hello!` back \n $help : sents a help message \n $inspire : sents a inpiering message \n $new : sents a encouragement to you \n $list : lists the messages \n $author : sents a credit message.")
 
 # Roles
-client.on('messageReactionAdd', (reaction, user) => {
+'''client.on('messageReactionAdd', (reaction, user) => {
 
 	console.log('Hello!');
 	const { name } = reaction.emoji;
@@ -146,7 +146,7 @@ client.on('messageReactionRemove', (reaction, user) => {
 				break;
 		}
 	}
-});
+});'''
 
 keep_alive()
 client.run(os.getenv("TOKEN"))
